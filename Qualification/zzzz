@@ -1,0 +1,45 @@
+n = int(input())
+res_A = []
+res_B = []
+for i in range(n):
+    str = input()
+    res_AA = []
+    digit = []
+    for i, num in enumerate(str):
+        if int(num) == 4:
+            res_AA.append('3')
+            digit.append(i)
+
+        else:
+            res_AA.append(num)
+    res_A.append(''.join(res_AA))
+
+
+    res_BB = 0
+    for d in digit:
+        if d == 0:
+            res_BB += 1
+        elif d == 1:
+            res_BB += 10
+        elif d == 2:
+            res_BB += 100
+        elif d == 3:
+            res_BB += 1000
+        elif d == 4:
+            res_BB += 10000
+        elif d == 5:
+            res_BB += 100000
+        elif d == 6:
+            res_BB += 1000000
+        elif d == 7:
+            res_BB += 10000000
+        elif d == 8:
+            res_BB += 100000000
+        elif d == 9:
+            res_BB += 1000000000
+    res_B.append(res_BB)
+
+cnt = 1
+for a, b in zip(res_A, res_B):
+    print('Case #{IDX}: {A} {B}'.format(IDX=cnt, A=a, B=b))
+    cnt += 1
